@@ -10,9 +10,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div>
-            <div>
-                <div>
+        <div class="container mt-4 col-lg-4">
+            <div class="card">
+                <div class="card-body">
                     <form>
                         
                     </form>
