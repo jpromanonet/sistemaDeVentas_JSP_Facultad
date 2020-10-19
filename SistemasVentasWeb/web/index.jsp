@@ -15,9 +15,12 @@
                 <div class="card-body">
                     <form>
                         <div class="form-group">
-                            <h3>Login<</h3>
-                            <img src="img/logo.png" alt="100" width="100"/>
-                            <label>Bienvenido al sistema de ventas</label>
+                            <center>
+                                <h3>Login</h3>
+                                <img src="img/logo.png" alt="100" width="100"/>
+                                <br/>
+                                <label>Bienvenido al Sistema de Ventas</label>
+                            </center>
                         </div>
                         <div class="form-group">
                             
