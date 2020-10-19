@@ -19,9 +19,10 @@
                             <img src="img/logo.png" alt="100" width="100"/>
                             <br/>
                             <label>Bienvenido al Sistema de Ventas</label>
-                        </div>
+                        </div class="form-group">
                         <div class="form-group">
-                            
+                            <label>Usuario</label>
+                            <input type="text" name="txtUser" class="form-control">
                         </div>
                         <div class="form-group">
                             
