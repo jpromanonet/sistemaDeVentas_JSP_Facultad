@@ -14,13 +14,11 @@
             <div class="card">
                 <div class="card-body">
                     <form class="form-sign">
-                        <div class="form-group">
-                            <center>
-                                <h3>Login</h3>
-                                <img src="img/logo.png" alt="100" width="100"/>
-                                <br/>
-                                <label>Bienvenido al Sistema de Ventas</label>
-                            </center>
+                        <div class="form-group text-center">
+                            <h3>Login</h3>
+                            <img src="img/logo.png" alt="100" width="100"/>
+                            <br/>
+                            <label>Bienvenido al Sistema de Ventas</label>
                         </div>
                         <div class="form-group">
                             
