@@ -17,7 +17,8 @@ public class EmpleadoDAO {
         
         String sql = "SELECT * FROM empleado WHERE User=? AND Dni=?";
         try{
-            
+            con = cn.Connector();
+            ps = con.prepareCall(sql);
         } catch(Exception e){
         }
         return em;
