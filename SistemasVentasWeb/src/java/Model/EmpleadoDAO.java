@@ -11,6 +11,12 @@ public class EmpleadoDAO {
     PreparedStatement ps;
     ResultSet rs;
     
+    /**
+     *
+     * @param user
+     * @param dni
+     * @return
+     */
     public Empleado validar(String user, String dni){
         Empleado em;
         em = new Empleado();
