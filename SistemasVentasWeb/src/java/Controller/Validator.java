@@ -70,11 +70,11 @@ public class Validator extends HttpServlet {
             if(em.getUser() != null){
                 request.getRequestDispatcher("Controller?accion=Principal").forward(request, response);
             } else {
-                request.getRequestDispatcher("index.jsp");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }
         else {
-            
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 
