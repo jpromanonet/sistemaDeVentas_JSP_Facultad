@@ -66,6 +66,10 @@ public class Validator extends HttpServlet {
         if(accion.equalsIgnoreCase("Ingresar")){
             String user=request.getParameter("txtuser");
             String pass=request.getParameter("txtpass");
+            em = edao.validar(user, pass);
+            if(em.getUser() != null){
+                request.getRequestDispatcher("Controller?accion=Principal").forward(request, response);
+            }
         }
         else {
             
