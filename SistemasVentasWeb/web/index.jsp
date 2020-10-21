@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="container mt-4 col-lg-4">
-            <div class="card">
+            <div class="card col-sm-10">
                 <div class="card-body">
                     <form class="form-sign">
                         <div class="form-group text-center">
@@ -25,8 +25,9 @@
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type
+                            <input type="password" name="txtpass" class="form-control">
                         </div>
+                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block">
                     </form>
                 </div>
             </div>
