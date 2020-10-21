@@ -69,6 +69,8 @@ public class Validator extends HttpServlet {
             em = edao.validar(user, pass);
             if(em.getUser() != null){
                 request.getRequestDispatcher("Controller?accion=Principal").forward(request, response);
+            } else {
+                request.getRequestDispatcher("index.jsp");
             }
         }
         else {
