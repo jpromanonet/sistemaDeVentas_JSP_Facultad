@@ -19,6 +19,13 @@ public class EmpleadoDAO {
         try{
             con = cn.Connector();
             ps = con.prepareCall(sql);
+            ps.setString(1, user);
+            ps.setString(2, dni);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                em.setUser(rs.getString("User"));
+                em.setDni(rs.getString("Dni"));
+            }
         } catch(Exception e){
         }
         return em;
