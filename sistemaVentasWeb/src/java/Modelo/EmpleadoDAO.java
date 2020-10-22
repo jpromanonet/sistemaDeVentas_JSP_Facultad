@@ -29,6 +29,7 @@ public class EmpleadoDAO {
                 em.setUser(rs.getString("User"));
                 em.setDni(rs.getString("Dni"));
                 em.setNom(rs.getString("Nombres"));
+                em.setMail(rs.getString("Mail"));
             }
         } catch (Exception e) {
         }
