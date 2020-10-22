@@ -1,29 +1,23 @@
 package Model;
 
-import Config.Connector;
+import Config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class EmpleadoDAO {
-    Connector cn=new Connector();
+    Conexion cn=new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    
-    /**
-     *
-     * @param user
-     * @param dni
-     * @return
-     */
+
     public Empleado validar(String user, String dni){
-        Empleado em;
-        em = new Empleado();
-        
+        Empleado em = new Empleado();
         String sql = "SELECT * FROM empleado WHERE User=? AND Dni=?";
+        
         try{
-            con = cn.Connector();
+            con = cn.Conexion();
             ps = con.prepareCall(sql);
             ps.setString(1, user);
             ps.setString(2, dni);
@@ -34,7 +28,7 @@ public class EmpleadoDAO {
                 em.setDni(rs.getString("Dni"));
                 em.setNom(rs.getString("Nombres"));
             }
-        } catch(Exception e){
+        } catch(SQLException e){
         }
         return em;
     }

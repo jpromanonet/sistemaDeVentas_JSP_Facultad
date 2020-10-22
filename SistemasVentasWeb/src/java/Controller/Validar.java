@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Model.Empleado;
+import Model.EmpleadoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,29 +18,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jromano
  */
-public class Controller extends HttpServlet {
+public class Validar extends HttpServlet {
+    
+    EmpleadoDAO edao = new EmpleadoDAO();
+    Empleado em = new Empleado();
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String accion = request.getParameter("accion");
-            switch(accion){
-                case "Principal":
-                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    break;
-                default:
-                    throw new AssertionError();
-            }
-        }
-    
+        response.setContentType("text/html;charset=UTF-8");
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -67,6 +55,20 @@ public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String accion=request.getParameter("accion");
+        if(accion.equalsIgnoreCase("Ingresar")){
+            String user=request.getParameter("txtuser");
+            String pass=request.getParameter("txtpass");
+            em=edao.validar(user, pass);
+            if(em.getUser()!=null){
+                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
+            } else {
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+        }
+        else {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
 
     /**
