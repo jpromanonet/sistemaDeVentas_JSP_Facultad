@@ -19,16 +19,6 @@ public class Controlador extends HttpServlet {
     int idc;
     int idp;
     
-    int item;
-    int cod;
-    String descripcion;
-    double precio;
-    int cant;
-    double subtotal;
-    double totalPagar;
-    
-    String numeroserie="";
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
