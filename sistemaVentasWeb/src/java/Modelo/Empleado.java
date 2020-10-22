@@ -13,7 +13,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(int id, String dni, String nom, String tel, String estado, String user, String mail) {
+    public Empleado(int id, String dni, String nom, String tel, String estado, String user, String mail, String permiso) {
         this.id = id;
         this.dni = dni;
         this.nom = nom;
@@ -78,6 +78,5 @@ public class Empleado {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
     
 }
