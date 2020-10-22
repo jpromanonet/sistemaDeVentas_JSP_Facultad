@@ -38,7 +38,7 @@
                         <img src="img/user.png" alt="60" width="60"/>
                     </a>
                     <a class="dropdown-item" href="#">${usuario.getUser()}</a>
-                    <a class="dropdown-item" href="#">usuario@gmail.com</a>
+                    <a class="dropdown-item" href="#">${mail.getMail()}</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="Validar?accion=Salir">Salir</a>
                 </div>
