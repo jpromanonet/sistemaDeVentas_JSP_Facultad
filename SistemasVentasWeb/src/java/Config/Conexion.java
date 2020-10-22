@@ -15,12 +15,12 @@ import java.sql.SQLException;
  */
 public class Conexion {
     Connection con;
-    String url="jdbc:mysql://localhost:3306/bd_ventas";
+    String url="jdbc:mariadb://localhost:3306/bd_ventas";
     String user="root";
     String pass="1234";
     public Connection Conexion(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mariadb.jdbc.Driver");
             con=DriverManager.getConnection(url,user,pass);
         } catch (ClassNotFoundException | SQLException e){
         }
