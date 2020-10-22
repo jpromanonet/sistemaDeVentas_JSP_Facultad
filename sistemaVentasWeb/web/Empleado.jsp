@@ -33,6 +33,10 @@
                                 <label>Usuario</label>
                                 <input type="text" value="${empleado.getUser()}" name="txtUser" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="text" value="${empleado.getMail()}" name="txtMail" class="form-control">
+                            </div>
                             <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                         </form>
@@ -51,6 +55,7 @@
                                     <th>TELEFONO</th>
                                     <th>ESTADO</th>
                                     <th>USER</th>
+                                    <th>E-MAIL</th>
                                     <th>ACCIONES</th>
                                 </tr>
                             </thead>
@@ -63,6 +68,7 @@
                                         <td>${em.getTel()}</td>
                                         <td>${em.getEstado()}</td>
                                         <td>${em.getUser()}</td>
+                                        <td>${em.getMail()}</td>
                                         <td>
                                             <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
                                             <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Delete&id=${em.getId()}">Delete</a>

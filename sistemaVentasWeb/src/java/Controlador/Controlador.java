@@ -38,11 +38,13 @@ public class Controlador extends HttpServlet {
                     String tel = request.getParameter("txtTel");
                     String est = request.getParameter("txtEstado");
                     String user = request.getParameter("txtUser");
+                    String mail = request.getParameter("txtMail");
                     em.setDni(dni);
                     em.setNom(nom);
                     em.setTel(tel);
                     em.setEstado(est);
                     em.setUser(user);
+                    em.setMail(mail);
                     edao.agregar(em);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;

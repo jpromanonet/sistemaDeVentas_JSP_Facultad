@@ -17,7 +17,7 @@ public class EmpleadoDAO {
 
     public Empleado validar(String user, String dni) {
         Empleado em = new Empleado();
-        String sql = "select * from empleado where User=? and Dni=?";
+        String sql = "SELECT * FROM empleado WHERE User=? AND Dni=?";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -53,6 +53,7 @@ public class EmpleadoDAO {
                 em.setTel(rs.getString(4));
                 em.setEstado(rs.getString(5));
                 em.setUser(rs.getString(6));
+                em.setMail(rs.getString(7));
                 lista.add(em);
             }
         } catch (Exception e) {
@@ -60,7 +61,7 @@ public class EmpleadoDAO {
         return lista;
     }
     public int agregar(Empleado em){ 
-        String sql="insert into empleado(Dni, Nombres, Telefono,Estado,User)values(?,?,?,?,?)";
+        String sql="insert into empleado(Dni, Nombres, Telefono,Estado,User,Mail)values(?,?,?,?,?,?)";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -69,6 +70,7 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
+            ps.setString(6, em.getMail());
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -88,13 +90,14 @@ public class EmpleadoDAO {
                 emp.setTel(rs.getString(4));
                 emp.setEstado(rs.getString(5));
                 emp.setUser(rs.getString(6));
+                emp.setMail(rs.getString(7));
             }
         } catch (Exception e) {
         }
         return emp;
     }
     public int actualizar(Empleado em){
-        String sql="update empleado set Dni=?, Nombres=?, Telefono=?,Estado=?,User=? where IdEmpleado=?";
+        String sql="update empleado set Dni=?, Nombres=?, Telefono=?,Estado=?,User=?, Mail=? where IdEmpleado=?";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -103,7 +106,8 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
-            ps.setInt(6, em.getId());
+            ps.setString(6, em.getMail());
+            ps.setInt(7, em.getId());
             ps.executeUpdate();
         } catch (Exception e) {
         }

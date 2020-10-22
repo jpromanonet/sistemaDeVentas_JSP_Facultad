@@ -44,7 +44,7 @@
                 </div>
             </div>
         </nav>
-        <div class="embed-responsives m-4" style="height: 530px;">
+        <div class="embed-responsives m-4" style="height: 600px;">
              <iframe class="embed-responsive-item" name="myFrame"  style="height: 100%; width: 100%; border:none;"></iframe>
         </div>   
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
