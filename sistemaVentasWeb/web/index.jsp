@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Login</title>
     </head>
-    <body>
+    <body background="img/bgimage.png">
         <div class="container mt-4 col-lg-4">
             <div class="card col-sm-10">
                 <div class="card-body">
