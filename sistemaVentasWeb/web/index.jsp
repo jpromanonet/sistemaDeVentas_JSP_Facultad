@@ -12,9 +12,10 @@
                 <div class="card-body">
                     <form class="form-sign" action="Validar" method="POST">
                         <div class="form-group text-center">
-                            <h3>Login</h3>
-                            <img src="img/logo.jpg" alt="70" width="170"/>
-                            <label>Bienvenidos al Sistema</label>
+                            <h1>Login</h1>
+                            <img src="img/logo.png" alt="Actualiza el navegador" height="100" width="100"/>
+                            <br/>
+                            <label><h3>¡Bienvenidos al Sistema de Ventas!</h3></label>
                         </div>
                         <div class="form-group">
                             <label>Usuario:</label>
