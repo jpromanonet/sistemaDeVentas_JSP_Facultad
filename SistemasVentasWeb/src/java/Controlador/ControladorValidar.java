@@ -1,25 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Controller;
+package Controlador;
 
-import Model.Empleado;
-import Model.EmpleadoDAO;
+import Modelo.Empleado;
+import Modelo.EmpleadoDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author jromano
- */
-public class Validar extends HttpServlet {
-    
+public class ControladorValidar extends HttpServlet {
+
     EmpleadoDAO edao = new EmpleadoDAO();
     Empleado em = new Empleado();
 
