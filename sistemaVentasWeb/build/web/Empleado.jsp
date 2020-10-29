@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <form action="Controlador?menu=Empleado" method="POST">
                             <div class="form-group">
-                                <label>Dni</label>
+                                <label>DNI</label>
                                 <input type="text" value="${empleado.getDni()}" name="txtDni" class="form-control">
                             </div>
                             <div class="form-group">
@@ -29,7 +29,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
-                                <input type="text" value="${empleado.getEstado()}" name="txtEstado" class="form-control">
+                                <select value="${empleado.getEstado()}" name="txtEstado" class="form-control">
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Usuario</label>

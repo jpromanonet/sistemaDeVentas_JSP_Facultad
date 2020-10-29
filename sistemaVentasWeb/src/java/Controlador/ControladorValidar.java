@@ -25,6 +25,7 @@ public class ControladorValidar extends HttpServlet {
                 request.setAttribute("mail", em);
                 request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
             } else {
+                request.setAttribute("Error", "Usuario Invalido");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         } else {

@@ -26,6 +26,9 @@
                             <input type="password" name="txtpass" value="123" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block">
+                        <% if(request.getAttribute("Error") != null){
+                            out.println(request.getAttribute("Error"));
+                        }%>
                     </form>
                 </div>
             </div>

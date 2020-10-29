@@ -37,9 +37,16 @@ public class EmpleadoDAO {
     }
     
     //Operaciones CRUD
-    
-    public List listar(){
+    /**
+     * Listar empleados habilitados
+     * @param mostrarTodo SI es TRUE muestra todos los usuarios y si es FALSE solo los habilitados con valor 1
+     * @return Una lista de usuarios dependiendo el valor de "mostrarTodo"
+     **/
+    public List listar(boolean mostrarTodo){
         String sql="select * from empleado";
+        if(!mostrarTodo){
+            sql+=" where estado = 1";
+        }
         List<Empleado>lista=new ArrayList<>();
         try {
             con=cn.Conexion();
@@ -60,6 +67,12 @@ public class EmpleadoDAO {
         }
         return lista;
     }
+    
+    // Metodo para mostrar todos los empleados
+    public List listar(){
+        return this.listar(false);
+    }
+    
     public int agregar(Empleado em){ 
         String sql="insert into empleado(Dni, Nombres, Telefono,Estado,User,Mail)values(?,?,?,?,?,?)";
         try {
@@ -78,6 +91,7 @@ public class EmpleadoDAO {
         
     }
     public Empleado listarId(int id){
+        // agregar un IF que liste todo.
         Empleado emp=new Empleado();
         String sql="select * from empleado where IdEmpleado="+id;
         try {
@@ -114,7 +128,7 @@ public class EmpleadoDAO {
         return r;
     }
     public void delete(int id){
-        String sql="delete from empleado where IdEmpleado="+id;
+        String sql="update empleado set estado = 0 where IdEmpleado="+id;
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
