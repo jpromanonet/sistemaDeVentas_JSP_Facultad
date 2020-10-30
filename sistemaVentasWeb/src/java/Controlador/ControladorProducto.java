@@ -21,9 +21,6 @@ public class ControladorProducto extends HttpServlet {
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
-        if (menu.equals("Principal")) {
-            request.getRequestDispatcher("Principal.jsp").forward(request, response);
-        }
         if (menu.equals("Producto")) {
             switch (accion) {
                 case "Listar":
@@ -40,13 +37,13 @@ public class ControladorProducto extends HttpServlet {
                     p.setStock(st);
                     p.setEstado(est);
                     pdao.agregar(p);
-                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorProducto?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
                     idp = Integer.parseInt(request.getParameter("id"));
                     Producto pr = pdao.listarId(idp);
                     request.setAttribute("producto", pr);
-                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorProducto?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 case "Actualizar":
                     String dni1 = request.getParameter("txtDni");
@@ -59,12 +56,12 @@ public class ControladorProducto extends HttpServlet {
                     p.setEstado(est1);
                     p.setId(idp);
                     pdao.actualizar(p);
-                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorProducto?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 case "Delete":
                     idp = Integer.parseInt(request.getParameter("id"));
                     pdao.delete(idp);
-                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorProducto?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 default:                    
                     throw new AssertionError();

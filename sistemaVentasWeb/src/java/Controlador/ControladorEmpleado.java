@@ -25,9 +25,6 @@ public class ControladorEmpleado extends HttpServlet {
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
-        if (menu.equals("Principal")) {
-            request.getRequestDispatcher("Principal.jsp").forward(request, response);
-        }
         if (menu.equals("Empleado")) {
             switch (accion) {
                 case "Listar":
