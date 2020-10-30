@@ -14,7 +14,7 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <form action="Controlador?menu=Empleado" method="POST">
+                        <form action="ControladorEmpleado?menu=Empleado" method="POST">
                             <div class="form-group">
                                 <label>DNI</label>
                                 <input type="text" value="${empleado.getDni()}" name="txtDni" class="form-control">
@@ -77,8 +77,8 @@
                                         <td>${em.getUser()}</td>
                                         <td>${em.getMail()}</td>
                                         <td>
-                                            <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
-                                            <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Delete&id=${em.getId()}">Eliminar</a>
+                                            <a class="btn btn-warning" href="ControladorEmpleado?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
+                                            <a class="btn btn-danger" href="ControladorEmpleado?menu=Empleado&accion=Delete&id=${em.getId()}">Eliminar</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
