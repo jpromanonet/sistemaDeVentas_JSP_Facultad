@@ -5,6 +5,7 @@ import config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class ProductoDAO {
               p.setStock(rs.getInt(4));
               p.setEstado(rs.getString(5));
           }
-      } catch (Exception e) {
+      } catch (SQLException e) {
       }
      return p;
   }
@@ -41,7 +42,7 @@ public class ProductoDAO {
           ps.setInt(1, stock);
           ps.setInt(2, id);
           ps.executeUpdate();
-      } catch (Exception e) {
+      } catch (SQLException e) {
       }
       return r;
   }
@@ -63,7 +64,7 @@ public class ProductoDAO {
                 em.setEstado(rs.getString(5));                
                 lista.add(em);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return lista;
     }
@@ -77,7 +78,7 @@ public class ProductoDAO {
             ps.setInt(3, p.getStock());
             ps.setString(4, p.getEstado());        
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return r;
         
@@ -96,7 +97,7 @@ public class ProductoDAO {
                 pr.setStock(rs.getInt(4));
                 pr.setEstado(rs.getString(5));  
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return pr;
     }
@@ -111,7 +112,7 @@ public class ProductoDAO {
             ps.setString(4, em.getEstado());            
             ps.setInt(5, em.getId());
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return r;
     }
@@ -121,7 +122,7 @@ public class ProductoDAO {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
     }
     
