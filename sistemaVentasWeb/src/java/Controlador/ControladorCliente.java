@@ -60,12 +60,12 @@ public class ControladorCliente extends HttpServlet {
                     c.setEs(est1);
                     c.setId(idc);
                     cdao.actualizar(c);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorCliente?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Delete":
                     idc = Integer.parseInt(request.getParameter("id"));
                     cdao.delete(idc);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorCliente?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();
