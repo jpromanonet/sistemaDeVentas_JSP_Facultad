@@ -47,7 +47,7 @@ public class ControladorCliente extends HttpServlet {
                     idc = Integer.parseInt(request.getParameter("id"));
                     Cliente cl = cdao.listarId(idc);
                     request.setAttribute("cliente", cl);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorCliente?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Actualizar":
                     String dni1 = request.getParameter("txtDni");
