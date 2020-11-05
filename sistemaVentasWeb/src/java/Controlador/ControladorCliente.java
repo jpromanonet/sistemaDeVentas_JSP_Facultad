@@ -41,7 +41,7 @@ public class ControladorCliente extends HttpServlet {
                     c.setDir(tel);
                     c.setEs(est);
                     cdao.agregar(c);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorCliente?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
                     idc = Integer.parseInt(request.getParameter("id"));
