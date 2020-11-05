@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
-                                <input type="text" value="${producto.getEstado()}" name="txtEstado" class="form-control">
+                                <input type="text" value="${producto.getEstado()}" name="txtEstado" class="form-control"> 
                             </div>                        
                             <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-success">

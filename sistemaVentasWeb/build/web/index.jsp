@@ -26,8 +26,11 @@
                             <input type="password" name="txtpass" value="123" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block">
+                        <br/>
                         <% if(request.getAttribute("Error") != null){
+                            out.println("<center><span class='bg-danger' style='font-weight: 900; padding: 10px;'>");
                             out.println(request.getAttribute("Error"));
+                            out.println("</span></center>");
                         }%>
                     </form>
                 </div>
