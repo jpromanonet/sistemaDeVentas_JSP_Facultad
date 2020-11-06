@@ -29,13 +29,15 @@ CREATE TABLE `empleado` (
   `Nombres` varchar(255) DEFAULT NULL,
   `Telefono` varchar(9) DEFAULT NULL,
   `Estado` varchar(1) DEFAULT NULL,
-  `User` varchar(8) DEFAULT NULL
+  `User` varchar(50) DEFAULT NULL,
+  `Mail` varchar(255) DEFAULT NULL,
+  `permisoAcceso` varchar(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `empleado` (`IdEmpleado`, `Dni`, `Nombres`, `Telefono`, `Estado`, `User`) VALUES
-(1, '123', 'Pedro Hernandez', '988252459', '1', 'emp01'),
-(2, '123', 'Roman Riquelme', '988252459', '1', 'Jo46'),
-(3, '123', 'Palermo Suarez', '453536458', '1', 'Em22');
+INSERT INTO `empleado` (`IdEmpleado`, `Dni`, `Nombres`, `Telefono`, `Estado`, `User`,`Mail`,`permisoAcceso`) VALUES
+(1, '123', 'Pedro Hernandez', '988252459', '1', 'emp01', 'emp01@test', '1'),
+(2, '123', 'Roman Riquelme', '988252459', '1', 'Jo46''joe46@test', '1'),
+(3, '123', 'Palermo Suarez', '453536458', '1', 'Em22''em22@test', '1');
 
 /*********************************************************/
 CREATE TABLE `producto` (
