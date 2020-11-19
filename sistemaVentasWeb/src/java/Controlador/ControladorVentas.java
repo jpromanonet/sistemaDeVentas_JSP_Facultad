@@ -49,6 +49,15 @@ public class ControladorVentas extends HttpServlet {
                             request.setAttribute("c", c);
                             request.setAttribute("nserie", numeroserie);
                             break;
+                        case "BuscarProducto":
+                            int id = Integer.parseInt(request.getParameter("codigoproducto"));
+                            p = pdao.listarId(id);                    
+                            request.setAttribute("c", c);
+                            request.setAttribute("producto", p);                    
+                            request.setAttribute("lista", lista);                    
+                            request.setAttribute("totalpagar", totalPagar);
+                            request.setAttribute("nserie", numeroserie);
+                            break;    
         }
     }
 
