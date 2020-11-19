@@ -40,6 +40,15 @@ public class ControladorVentas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                if (menu.equals("NuevaVenta")) {           
+                    switch (accion) {
+                        case "BuscarCliente":
+                            String dni = request.getParameter("codigocliente");
+                            c.setDni(dni);
+                            c = cdao.buscar(dni);
+                            request.setAttribute("c", c);
+                            request.setAttribute("nserie", numeroserie);
+                            break;
         }
     }
 
