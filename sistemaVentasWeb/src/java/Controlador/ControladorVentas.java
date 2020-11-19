@@ -82,7 +82,37 @@ public class ControladorVentas extends HttpServlet {
                             request.setAttribute("totalpagar", totalPagar);
                             request.setAttribute("lista", lista);                    
                             break;
-                        
+                        case "GenerarVenta":
+                            //Actualizacion del Stock
+                            for (int i = 0; i < lista.size(); i++) {
+                                Producto pr=new Producto();
+                                int cantidad=lista.get(i).getCantidad();
+                                int idproducto=lista.get(i).getIdproducto();
+                                ProductoDAO aO=new ProductoDAO();
+                                pr=aO.buscar(idproducto);
+                                int sac=pr.getStock()-cantidad;
+                                aO.actualizarstock(idproducto, sac);
+                            }
+                            //Guardar Venta
+                            v.setIdcliente(c.getId());
+                            v.setIdempleado(2);
+                            v.setNumserie(numeroserie);
+                            v.setFecha("2019-06-14");
+                            v.setMonto(totalPagar);
+                            v.setEstado("1");
+                            vdao.guardarVenta(v);
+                            //Guardar Detalle ventas
+                            int idv=Integer.parseInt(vdao.IdVentas());
+                            for (int i = 0; i < lista.size(); i++) {
+                                v=new Venta();
+                                v.setId(idv);
+                                v.setIdproducto(lista.get(i).getIdproducto());
+                                v.setCantidad(lista.get(i).getCantidad());
+                                v.setPrecio(lista.get(i).getPrecio());
+                                vdao.guardarDetalleventas(v);
+                            }
+                            lista=new ArrayList<>();
+                            break;    
         }
     }
 
