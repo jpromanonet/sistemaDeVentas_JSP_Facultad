@@ -117,7 +117,7 @@
                             </div>
                             <div class="col-sm-6 ml-auto d-flex">                                
                                 <label class=" col-sm-6 text-right mt-2">Total a Pagar</label>                                                       
-                                <input type="text" name="txtTotal" value="S/.${totalpagar}0" class="form-control text-center font-weight-bold" style="font-size: 18px;">
+                                <input type="text" name="txtTotal" value="${totalpagar}" class="form-control text-center font-weight-bold" style="font-size: 18px;">
                             </div>
                         </div>                        
                     </div>

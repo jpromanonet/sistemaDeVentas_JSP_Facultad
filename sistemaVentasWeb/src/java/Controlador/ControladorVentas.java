@@ -107,15 +107,16 @@ public class ControladorVentas extends HttpServlet {
                             v.setIdcliente(c.getId());
                             v.setIdempleado(2);
                             v.setNumserie(numeroserie);
-                            v.setFecha("2019-06-14");
+                            v.setFecha("2020-11-19");
                             v.setMonto(totalPagar);
                             v.setEstado("1");
                             vdao.guardarVenta(v);
                             //Guardar Detalle ventas
                             int idv=Integer.parseInt(vdao.IdVentas());
+                            //System.out.print("ID VENTAS: " + vdao.IdVentas());
                             for (int i = 0; i < lista.size(); i++) {
                                 v=new Venta();
-                                v.setId(idv);
+                                v.setNumserie(idv);
                                 v.setIdproducto(lista.get(i).getIdproducto());
                                 v.setCantidad(lista.get(i).getCantidad());
                                 v.setPrecio(lista.get(i).getPrecio());

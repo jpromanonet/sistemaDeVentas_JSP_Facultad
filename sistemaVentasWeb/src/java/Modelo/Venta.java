@@ -138,6 +138,10 @@ public class Venta {
         this.estado = estado;
     }
 
+    public void setNumserie(int idv) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
 }

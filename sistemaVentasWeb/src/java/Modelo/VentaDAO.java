@@ -5,6 +5,7 @@ import config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class VentaDAO {
     Connection con;
@@ -28,7 +29,7 @@ public class VentaDAO {
     }
     public String IdVentas(){
         String idventas="";
-        String sql="select max(IdVentas) from ventas";
+        String sql="select ifnull(max(IdVentas), 0) from ventas";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -41,7 +42,7 @@ public class VentaDAO {
         return idventas;
     }
     public int guardarVenta(Venta ve){
-        String sql="insert into ventas(IdCliente, IdEmpleado, NumeroSerie,FechaVentas,Monto, Estado)values(?,?,?,?,?,?)";
+        String sql="insert into ventas(IdCliente, IdEmpleado, NumeroSerie,FechaVentas,Monto, Estado)values(?,?,?,?,?,?,?)";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -52,7 +53,8 @@ public class VentaDAO {
             ps.setDouble(5, ve.getMonto());
             ps.setString(6, ve.getEstado());
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return r;
     }
