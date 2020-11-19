@@ -21,7 +21,7 @@
         <div class="d-flex">
             <div class="col-lg-5 parte01">
                 <div class="card">
-                    <form action="Controlador?menu=NuevaVenta" method="POST">
+                    <form action="ControladorVentas?menu=NuevaVenta" method="POST">
                         <div class="card-body">
                             <!--DATOS DEL PRODUCTO-->
                             <div class="form-group">

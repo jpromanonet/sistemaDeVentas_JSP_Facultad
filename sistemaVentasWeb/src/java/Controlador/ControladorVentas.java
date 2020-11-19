@@ -9,7 +9,6 @@ import Modelo.ProductoDAO;
 import Modelo.Venta;
 import Modelo.VentaDAO;
 import config.GenerarSerie;
-import static java.awt.SystemColor.menu;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,10 +95,10 @@ public class ControladorVentas extends HttpServlet {
                         case "GenerarVenta":
                             //Actualizacion del Stock
                             for (int i = 0; i < lista.size(); i++) {
-                                Producto pr=new Producto();
+                                Producto pr = new Producto();
                                 int cantidad=lista.get(i).getCantidad();
                                 int idproducto=lista.get(i).getIdproducto();
-                                ProductoDAO aO=new ProductoDAO();
+                                ProductoDAO aO = new ProductoDAO();
                                 pr=aO.buscar(idproducto);
                                 int sac=pr.getStock()-cantidad;
                                 aO.actualizarstock(idproducto, sac);
