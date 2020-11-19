@@ -58,6 +58,30 @@ public class ControladorVentas extends HttpServlet {
                             request.setAttribute("totalpagar", totalPagar);
                             request.setAttribute("nserie", numeroserie);
                             break;
+                        case "Agregar":
+                            request.setAttribute("nserie", numeroserie);
+                            request.setAttribute("c", c);
+                            totalPagar = 0.0;
+                            item = item + 1;
+                            cod = p.getId();
+                            descripcion = request.getParameter("nomproducto");
+                            precio = Double.parseDouble(request.getParameter("precio"));
+                            cant = Integer.parseInt(request.getParameter("cant"));
+                            subtotal = precio * cant;
+                            v = new Venta();
+                            v.setItem(item);
+                            v.setIdproducto(cod);
+                            v.setDescripcionP(descripcion);
+                            v.setPrecio(precio);
+                            v.setCantidad(cant);
+                            v.setSubtotal(subtotal);
+                            lista.add(v);
+                            for (int i = 0; i < lista.size(); i++) {
+                                totalPagar = totalPagar + lista.get(i).getSubtotal();
+                            }
+                            request.setAttribute("totalpagar", totalPagar);
+                            request.setAttribute("lista", lista);                    
+                            break;
                         request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     }
                 request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
