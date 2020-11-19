@@ -113,6 +113,21 @@ public class ControladorVentas extends HttpServlet {
                             }
                             lista=new ArrayList<>();
                             break;
+                        default:                    
+                            v = new Venta();
+                            lista = new ArrayList<>();
+                            item = 0;
+                            totalPagar = 0.0;                    
+                            numeroserie = vdao.GenerarSerie();
+                            if (numeroserie == null) {
+                                numeroserie = "000000001";                        
+                                request.setAttribute("nserie", numeroserie);
+                            } else {
+                                int incrementar = Integer.parseInt(numeroserie);
+                                GenerarSerie gs = new GenerarSerie();
+                                numeroserie = gs.NumeroSerie(incrementar);
+                                request.setAttribute("nserie", numeroserie);
+                            }
                         request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     }
                 request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
