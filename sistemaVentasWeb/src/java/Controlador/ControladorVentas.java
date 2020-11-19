@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
+import Modelo.Cliente;
+import Modelo.ClienteDAO;
+import Modelo.Empleado;
+import Modelo.EmpleadoDAO;
+import Modelo.Producto;
+import Modelo.ProductoDAO;
 import Modelo.Venta;
 import Modelo.VentaDAO;
+import config.GenerarSerie;
+import static java.awt.SystemColor.menu;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +23,13 @@ import javax.servlet.http.HttpServletResponse;
  * @author jromano
  */
 public class ControladorVentas extends HttpServlet {
-
+    
+    Empleado em = new Empleado();
+    EmpleadoDAO edao = new EmpleadoDAO();
+    Cliente c = new Cliente();
+    ClienteDAO cdao = new ClienteDAO();
+    Producto p = new Producto();
+    ProductoDAO pdao = new ProductoDAO();
     int ide;
     int idc;
     int idp;
@@ -37,10 +46,12 @@ public class ControladorVentas extends HttpServlet {
     
     String numeroserie="";
     VentaDAO vdao = new VentaDAO();
-     */
+     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                if (menu.equals("NuevaVenta")) {           
+                String menu = request.getParameter("menu");
+                String accion = request.getParameter("accion");
+                if (menu.equals("NuevaVenta")) {
                     switch (accion) {
                         case "BuscarCliente":
                             String dni = request.getParameter("codigocliente");
