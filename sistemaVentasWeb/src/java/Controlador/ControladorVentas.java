@@ -42,6 +42,13 @@ public class ControladorVentas extends HttpServlet {
             throws ServletException, IOException {
                 if (menu.equals("NuevaVenta")) {           
                     switch (accion) {
+                        case "BuscarCliente":
+                            String dni = request.getParameter("codigocliente");
+                            c.setDni(dni);
+                            c = cdao.buscar(dni);
+                            request.setAttribute("c", c);
+                            request.setAttribute("nserie", numeroserie);
+                            break;
                         request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     }
                 request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
