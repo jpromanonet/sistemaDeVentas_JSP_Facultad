@@ -10,6 +10,7 @@ import Modelo.Venta;
 import Modelo.VentaDAO;
 import config.GenerarSerie;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -92,16 +93,19 @@ public class ControladorVentas extends HttpServlet {
                             request.setAttribute("lista", lista);                    
                             break;
                         case "GenerarVenta":
+                            // Generar fecha para guardar venta
+                            java.util.Date ahora = new java.util.Date(); 
+                            SimpleDateFormat formateador = new SimpleDateFormat("yyyy/MM/dd");
                             //Guardar Venta
                             v.setIdcliente(c.getId());
                             v.setIdempleado(1);
                             v.setNumserie(numeroserie);
-                            v.setFecha("2020-11-19");
+                            v.setFecha(ahora.formateador());
                             v.setMonto(totalPagar);
                             v.setEstado("1");
                             vdao.guardarVenta(v);
                             //Guardar Detalle ventas
-                            String idv=vdao.IdVentas();
+                            int idv=Integer.parseInt(vdao.IdVentas());
                             for(int i = 0; i < lista.size(); i++){
                                 v=new Venta();
                                 v.setId(idv);
