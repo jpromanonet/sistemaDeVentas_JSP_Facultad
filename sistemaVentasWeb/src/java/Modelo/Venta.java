@@ -1,5 +1,8 @@
 package Modelo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Venta {
     Integer id;
     Integer item;
@@ -143,6 +146,14 @@ public class Venta {
     }
 
     public void setId(String idv) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFecha(SimpleDateFormat formateador) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFecha(Date ahora) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

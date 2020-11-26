@@ -29,8 +29,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
-                                <input type="text" value="${cliente.getEs()}" name="txtEstado" class="form-control">
-                            </div>                        
+                                <select value="${cliente.getEs()}" name="txtEstado" class="form-control">
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>                       
                             <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                         </form>

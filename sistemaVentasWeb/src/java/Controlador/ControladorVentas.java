@@ -100,7 +100,7 @@ public class ControladorVentas extends HttpServlet {
                             v.setIdcliente(c.getId());
                             v.setIdempleado(1);
                             v.setNumserie(numeroserie);
-                            v.setFecha(ahora.formateador());
+                            v.setFecha(ahora);
                             v.setMonto(totalPagar);
                             v.setEstado("1");
                             vdao.guardarVenta(v);
