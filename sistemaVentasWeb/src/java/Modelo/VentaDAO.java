@@ -42,7 +42,8 @@ public class VentaDAO {
         return idventas;
     }
     public int guardarVenta(Venta ve){
-        String sql="insert into ventas(IdCliente, IdEmpleado, NumeroSerie,FechaVentas,Monto, Estado)values(?,?,?,?,?,?,?)";
+        String sql;
+        sql = "INSERT INTO ventas(IdCliente,IdEmpleado,NumeroSerie,FechaVentas,Monto,Estado)VALUES(?,?,?,?,?,?)";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
