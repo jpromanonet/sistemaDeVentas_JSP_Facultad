@@ -142,19 +142,19 @@ public class Venta {
     }
 
     public void setNumserie(int idv) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.Numserie = Numserie; //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setId(String idv) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.id = id; //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setFecha(SimpleDateFormat formateador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.fecha = fecha; //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setFecha(Date ahora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.fecha = fecha;//To change body of generated methods, choose Tools | Templates.
     }
 
     

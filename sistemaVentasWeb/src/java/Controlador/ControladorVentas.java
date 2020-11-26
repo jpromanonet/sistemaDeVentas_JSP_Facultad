@@ -93,6 +93,16 @@ public class ControladorVentas extends HttpServlet {
                             request.setAttribute("lista", lista);                    
                             break;
                         case "GenerarVenta":
+                            //Actualizacion del Stock
+                            for (int i = 0; i < lista.size(); i++) {
+                                Producto pr = new Producto();
+                                int cantidad=lista.get(i).getCantidad();
+                                int idproducto=lista.get(i).getIdproducto();
+                                ProductoDAO aO = new ProductoDAO();
+                                pr=aO.buscar(idproducto);
+                                int sac=pr.getStock()-cantidad;
+                                aO.actualizarstock(idproducto, sac);
+                            }
                             // Generar fecha para guardar venta
                             java.util.Date ahora = new java.util.Date(); 
                             SimpleDateFormat formateador = new SimpleDateFormat("yyyy/MM/dd");
