@@ -17,7 +17,7 @@ public class EmpleadoDAO {
 
     public Empleado validar(String user, String dni) {
         Empleado em = new Empleado();
-        String sql = "SELECT * FROM empleado WHERE User=? AND Dni=?";
+        String sql = "SELECT * FROM empleado WHERE User=? AND Dni=? AND Estado = 1";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

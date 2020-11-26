@@ -5,14 +5,14 @@
         <group>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Controlador/ControladorVentas.java</file>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/VentaDAO.java</file>
+            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/web/Clientes.jsp</file>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Controlador/ControladorProducto.java</file>
-            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/config/GenerarSerie.java</file>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/web/Producto.jsp</file>
-            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/web/Principal.jsp</file>
+            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/Cliente.java</file>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/web/RegistrarVenta.jsp</file>
-            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/ProductoDAO.java</file>
-            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/Venta.java</file>
+            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/web/Empleado.jsp</file>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Controlador/ControladorCliente.java</file>
+            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/ClienteDAO.java</file>
         </group>
     </open-files>
 </project-private>
