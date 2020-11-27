@@ -134,7 +134,7 @@
             function validarCantidad(){
                 var cant = parseInt(document.getElementById("cant").value);
                 var stock = parseInt(document.getElementById("stock").value);
-                    if(max<min) {
+                    if(stock < cant) {
                             alert("¡Tu cantidad no puede superar el stock!");
                         } 
             }
