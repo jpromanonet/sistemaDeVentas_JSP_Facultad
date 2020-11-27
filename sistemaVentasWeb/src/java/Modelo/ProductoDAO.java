@@ -85,7 +85,7 @@ public class ProductoDAO {
     }
     public Producto listarId(int id){
         Producto pr=new Producto();
-        String sql="select * from producto where IdProducto="+id;
+        String sql="select * from producto where stock != 0 and IdProducto="+id;
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);

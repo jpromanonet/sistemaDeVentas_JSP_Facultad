@@ -77,9 +77,6 @@ public class ControladorVentas extends HttpServlet {
                             descripcion = request.getParameter("nomproducto");
                             precio = Double.parseDouble(request.getParameter("precio"));
                             cant = Integer.parseInt(request.getParameter("cant"));
-                            if(cant == 0 || cant < 0){
-                                break;
-                            }
                             subtotal = precio * cant;
                             v = new Venta();
                             v.setItem(item);
