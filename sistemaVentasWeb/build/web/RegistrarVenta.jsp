@@ -138,10 +138,15 @@
                     if(stock < cant) {
                             alert("¡Tu cantidad no puede superar el stock!");
                             return false;
-                        } else {
-                            formulario.submit();
-                            return true;
-                        } 
+                    }
+                    if(stock == 0){
+                            alert("Este producto no posee Stock");
+                            return false;
+                    } 
+                    else {
+                        formulario.submit();
+                        return true;
+                    } 
             }
         </script>
     </body>
