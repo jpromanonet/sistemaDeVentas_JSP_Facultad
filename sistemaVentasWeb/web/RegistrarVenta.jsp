@@ -134,8 +134,13 @@
             function validarCantidad(){
                 var cant = parseInt(document.getElementById("cant").value);
                 var stock = parseInt(document.getElementById("stock").value);
+                var formulario = document.getElementById("generarVenta");
                     if(stock < cant) {
                             alert("¡Tu cantidad no puede superar el stock!");
+                            return false;
+                        } else {
+                            formulario.submit();
+                            return true;
                         } 
             }
         </script>
