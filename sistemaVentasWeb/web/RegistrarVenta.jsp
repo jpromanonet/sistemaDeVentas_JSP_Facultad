@@ -142,6 +142,7 @@
                     }
                     if(stock == 0){
                             alert("Este producto no posee Stock");
+                            e.preventDefault();
                             return false;
                     } 
                     else {
