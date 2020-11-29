@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label>Datos Producto</label>
                             </div>
-                            <div class="form-group d-flex">
+                            <div id="buscarProducto" class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
                                     <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
@@ -131,18 +131,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript">
+            // Funcion para validar cantidad y stock
             function validarCantidad(e){
                 var cant = parseInt(document.getElementById("cant").value);
                 var stock = parseInt(document.getElementById("stock").value);
                 var formulario = document.getElementById("generarVenta");
                     if(stock < cant || stock == 0) {
-                            alert("¡Tu cantidad no puede superar el stock o ser 0!");
+                            alert("Este producto no posee stock o la cantidad solicitada es mayor al stock disponible");
                             e.preventDefault();
                             return false;
+                            formulario.reset();
                     } else {
                         formulario.submit();
                         return true;
-                    } 
+                    }
             }
         </script>
     </body>

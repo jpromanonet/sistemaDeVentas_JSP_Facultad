@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Controlador/ControladorVentas.java</file>
+            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/VentaDAO.java</file>
             <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/web/RegistrarVenta.jsp</file>
+            <file>file:/C:/Users/jromano/Documents/git/sistemaDeVentas_JSP_Facultad/sistemaVentasWeb/src/java/Modelo/ProductoDAO.java</file>
         </group>
     </open-files>
 </project-private>
