@@ -135,17 +135,11 @@
                 var cant = parseInt(document.getElementById("cant").value);
                 var stock = parseInt(document.getElementById("stock").value);
                 var formulario = document.getElementById("generarVenta");
-                    if(stock < cant) {
-                            alert("¡Tu cantidad no puede superar el stock!");
+                    if(stock < cant || stock == 0) {
+                            alert("¡Tu cantidad no puede superar el stock o ser 0!");
                             e.preventDefault();
                             return false;
-                    }
-                    if(stock == 0){
-                            alert("Este producto no posee Stock");
-                            e.preventDefault();
-                            return false;
-                    } 
-                    else {
+                    } else {
                         formulario.submit();
                         return true;
                     } 

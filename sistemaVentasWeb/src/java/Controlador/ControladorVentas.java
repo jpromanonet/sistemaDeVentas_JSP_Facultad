@@ -95,28 +95,25 @@ public class ControladorVentas extends HttpServlet {
                         case "GenerarVenta":
                             //Actualizacion del Stock
                             for (int i = 0; i < lista.size(); i++) {
-                                Producto pr = new Producto();
+                                Producto pr=new Producto();
                                 int cantidad=lista.get(i).getCantidad();
                                 int idproducto=lista.get(i).getIdproducto();
-                                ProductoDAO aO = new ProductoDAO();
+                                ProductoDAO aO=new ProductoDAO();
                                 pr=aO.buscar(idproducto);
                                 int sac=pr.getStock()-cantidad;
                                 aO.actualizarstock(idproducto, sac);
                             }
-                            // Generar fecha para guardar venta
-                            java.util.Date ahora = new java.util.Date(); 
-                            SimpleDateFormat formateador = new SimpleDateFormat("yyyy/MM/dd");
                             //Guardar Venta
                             v.setIdcliente(c.getId());
-                            v.setIdempleado(1);
+                            v.setIdempleado(2);
                             v.setNumserie(numeroserie);
-                            v.setFecha(ahora);
+                            v.setFecha("2019-06-14");
                             v.setMonto(totalPagar);
                             v.setEstado("1");
                             vdao.guardarVenta(v);
                             //Guardar Detalle ventas
                             int idv=Integer.parseInt(vdao.IdVentas());
-                            for(int i = 0; i < lista.size(); i++){
+                            for (int i = 0; i < lista.size(); i++) {
                                 v=new Venta();
                                 v.setId(idv);
                                 v.setIdproducto(lista.get(i).getIdproducto());
@@ -124,6 +121,7 @@ public class ControladorVentas extends HttpServlet {
                                 v.setPrecio(lista.get(i).getPrecio());
                                 vdao.guardarDetalleventas(v);
                             }
+                            lista=new ArrayList<>();
                             break;
                         default:                    
                             v = new Venta();
