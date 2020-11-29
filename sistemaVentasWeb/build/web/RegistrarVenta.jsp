@@ -21,7 +21,7 @@
         <div class="d-flex">
             <div class="col-lg-5 parte01">
                 <div class="card">
-                    <form id="generarVenta" action="ControladorVentas?menu=NuevaVenta" method="POST">
+                    <form id="generarVenta" onSubmit="return validarCantidad();" action="ControladorVentas?menu=NuevaVenta" method="POST">
                         <div class="card-body">
                             <!--DATOS DEL PRODUCTO-->
                             <div class="form-group">
@@ -63,7 +63,7 @@
                             <!--BOTON AGREGAR PRODUCTO AL REGISTRO-->
                             <div class="form-group">
                                 <div class="col-sm">
-                                    <button type="button" name="accion" value="Agregar" onClick="validarCantidad();" class="btn btn-outline-primary">Agregar Producto</button>
+                                    <button type="submit" name="accion" value="Agregar" class="btn btn-outline-primary">Agregar Producto</button>
                                 </div>
                             </div>
                         </div>
