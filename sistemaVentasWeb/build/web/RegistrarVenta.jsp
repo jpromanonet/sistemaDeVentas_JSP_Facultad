@@ -137,6 +137,7 @@
                 var formulario = document.getElementById("generarVenta");
                     if(stock < cant) {
                             alert("¡Tu cantidad no puede superar el stock!");
+                            e.preventDefault();
                             return false;
                     }
                     if(stock == 0){
