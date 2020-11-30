@@ -138,9 +138,10 @@
                 var formulario = document.getElementById("generarVenta");
                     if(stock < cant || stock == 0) {
                             alert("Este producto no posee stock o la cantidad solicitada es mayor al stock disponible");
+                            document.getElementById("cant").value = "0";
+                            document.getElementById("stock").value = "";
                             e.preventDefault();
                             return false;
-                            formulario.reset();
                     } else {
                         formulario.submit();
                         return true;
