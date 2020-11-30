@@ -149,8 +149,8 @@
                     } else {
                         formulario.submit();
                         return true;
-                        document.getElementById("stock").value = stock - cant;
                     }
+                document.getElementById("stock").value = stock - cant;
             }
         </script>
     </body>
