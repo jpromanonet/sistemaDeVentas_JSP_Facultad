@@ -149,7 +149,7 @@
                     } else {
                         formulario.submit();
                         return true;
-                        ocument.getElementById("stock").value = stock - cant;
+                        document.getElementById("stock").value = stock - cant;
                     }
             }
         </script>
