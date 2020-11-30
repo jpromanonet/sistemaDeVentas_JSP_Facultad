@@ -150,7 +150,6 @@
                         formulario.submit();
                         return true;
                     }
-                document.getElementById("stock").value = stock - cant;
             }
         </script>
     </body>
