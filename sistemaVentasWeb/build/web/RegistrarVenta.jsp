@@ -29,11 +29,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
+                                    <input type="text" id="dniCliente" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
                                     <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">Buscar</button>
                                 </div>                           
                                 <div class="col-sm-6">
-                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Datos Cliente" class="form-control">
+                                    <input type="text" id="nombreDelCliente" name="nombrescliente" value="${c.getNom()}" placeholder="Datos Cliente" class="form-control">
                                 </div>                           
                             </div>
                             <!--DATOS DEL PRODUCTO-->
@@ -136,10 +136,14 @@
                 var cant = parseInt(document.getElementById("cant").value);
                 var stock = parseInt(document.getElementById("stock").value);
                 var formulario = document.getElementById("generarVenta");
+                var dniCliente = document.getElementById("dniCliente").value;
+                var nombreDelCliente = document.getElementById("nombreDelCliente").value;
                     if(stock < cant || stock == 0) {
                             alert("Este producto no posee stock o la cantidad solicitada es mayor al stock disponible");
                             document.getElementById("cant").value = "0";
                             document.getElementById("stock").value = "";
+                            document.getElementById("dniCliente").value = dniCliente;
+                            document.getElementById("nombreDelCliente").value = nombreDelCliente
                             e.preventDefault();
                             return false;
                     } else {
